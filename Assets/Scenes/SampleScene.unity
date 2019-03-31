@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 581101890}
   - component: {fileID: 581101891}
   - component: {fileID: 581101892}
+  - component: {fileID: 581101893}
   m_Layer: 0
   m_Name: PacketHandler
   m_TagString: Untagged
@@ -319,6 +320,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660240ff744fafc43874c8a32b38c0d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &581101893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581101889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d48be9fa2595674dae3b0dbfbe698dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &588371415
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,8 +362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d23a08fbbe76246ad4ab79b2f2853f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handlers:
-  - {fileID: 0}
 --- !u!4 &588371417
 Transform:
   m_ObjectHideFlags: 0
