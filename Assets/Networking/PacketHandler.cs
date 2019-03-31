@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -80,8 +79,6 @@ public class PacketHandler : MonoBehaviour
   }
   protected void emit<T>(string key, T data) where T : class
   {
-    string json = JsonConvert.SerializeObject(data);
-    JSONObject send = new JSONObject(json);
-    this.net.emit(key, send);
+    this.net.emit(key, JSONHandler.classToJSONObject(data));
   }
 }
