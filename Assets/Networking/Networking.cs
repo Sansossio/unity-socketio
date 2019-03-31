@@ -15,6 +15,7 @@ public class Networking : MonoBehaviour
   {
     instance = this;
     socket = this.GetComponent<SocketIOComponent>();
+    DontDestroyOnLoad(this.gameObject);
   }
   public void Start()
   {
