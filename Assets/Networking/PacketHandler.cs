@@ -58,11 +58,11 @@ public class PacketHandler : MonoBehaviour
           string socketEvent = network.prefix + values.socketEvent;
           Type type = typeof(NullType);
           ParameterInfo[] methodParams = method.GetParameters();
-          if (methodParams.Length > 0)
+          if (methodParams.Length == 1)
           {
             type = methodParams[0].ParameterType;
           }
-          if (methodParams.Length > 1)
+          else if (methodParams.Length > 1)
           {
             Debug.LogError("Handler: '" + method.Name + "' has more of 1 param");
             continue;
