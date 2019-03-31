@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
@@ -46,12 +47,12 @@ public class PacketHandler : MonoBehaviour
   {
     MethodInfo registerMethod = typeof(Networking).GetMethod("handlerEvent", BindingFlags.Static | BindingFlags.Public);
     Type me = this.GetType();
-    var networkAttributes = me.GetCustomAttributes(true).OfType<NetworkHandler>();
+    IEnumerable<NetworkHandler> networkAttributes = me.GetCustomAttributes(true).OfType<NetworkHandler>();
     foreach (var network in networkAttributes)
     {
       foreach (MethodInfo method in me.GetMethods())
       {
-        var socketAttributes = method.GetCustomAttributes(true).OfType<SocketEvent>();
+        IEnumerable<SocketEvent> socketAttributes = method.GetCustomAttributes(true).OfType<SocketEvent>();
         foreach (SocketEvent values in socketAttributes)
         {
           string socketEvent = network.prefix + values.socketEvent;
